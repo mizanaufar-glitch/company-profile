@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tune Street — Catalog & Virtual Garage</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" data-page="home">TUNE<span>STREET</span></a>
+      <nav class="main-nav">
+        <button class="nav-btn active" data-page="home">Home</button>
+        <button class="nav-btn" data-page="catalog">Catalog</button>
+        <button class="nav-btn" data-page="garage">Virtual Garage</button>
+        <button class="nav-btn" data-page="cart">Cart <span id="cart-count" class="badge">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="page-home" class="page active">
+      <div class="hero">
+        <div class="container hero-content">
+          <h1>Build Your Dream JDM Machine</h1>
+          <p>Choose a legend. Paint it. Kit it. Wheel it. See it live in the Virtual Garage.</p>
+          <div class="hero-actions">
+            <button class="btn primary" data-page="garage">Open Virtual Garage</button>
+            <button class="btn secondary" data-page="catalog">Browse Catalog</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container section">
+        <h2 class="section-title">Featured Cars</h2>
+        <div class="car-grid" id="home-cars"></div>
+      </div>
+
+      <div class="container section">
+        <h2 class="section-title">Popular Parts</h2>
+        <div class="parts-grid" id="home-parts"></div>
+      </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section id="page-catalog" class="page">
+      <div class="container section">
+        <h2 class="section-title">Parts Catalog</h2>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="wheels">Wheels</button>
+          <button class="filter-btn" data-filter="aero">Aero</button>
+          <button class="filter-btn" data-filter="performance">Performance</button>
+          <button class="filter-btn" data-filter="interior">Interior</button>
+        </div>
+        <div class="parts-grid" id="catalog-grid"></div>
+      </div>
+    </section>
+
+    <!-- GARAGE -->
+    <section id="page-garage" class="page">
+      <div class="container section">
+        <h2 class="section-title">Virtual Garage</h2>
+        <div class="garage-layout">
+          <div class="car-stage-wrap">
+            <div id="car-stage" class="car-stage">
+              <div class="car-body" id="car-body">
+                <div class="car-silhouette"></div>
+                <div class="wheel front-left"></div>
+                <div class="wheel front-right"></div>
+                <div class="wheel rear-left"></div>
+                <div class="wheel rear-right"></div>
+                <div class="wing" id="car-wing"></div>
+                <div class="bodykit-front" id="bodykit-front"></div>
+                <div class="bodykit-side" id="bodykit-side"></div>
+              </div>
+              <div class="car-label" id="car-label">Nissan Skyline GT-R R34</div>
+            </div>
+            <div class="price-box">
+              Estimated build: <strong id="build-price">$0</strong>
+            </div>
+          </div>
+
+          <div class="garage-controls">
+            <div class="control-group">
+              <h3>Choose Car</h3>
+              <div class="option-row" id="car-options"></div>
+            </div>
+
+            <div class="control-group">
+              <h3>Paint Color</h3>
+              <div class="color-row" id="paint-options"></div>
+            </div>
+
+            <div class="control-group">
+              <h3>Wheels</h3>
+              <div class="option-row" id="wheel-options"></div>
+            </div>
+
+            <div class="control-group">
+              <h3>Body Kit</h3>
+              <div class="option-row" id="bodykit-options"></div>
+            </div>
+
+            <div class="control-group">
+              <h3>Rear Wing</h3>
+              <div class="option-row" id="wing-options"></div>
+            </div>
+
+            <button class="btn primary full" id="add-build-to-cart">Add Current Build to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CART -->
+    <section id="page-cart" class="page">
+      <div class="container section">
+        <h2 class="section-title">Your Cart</h2>
+        <div id="cart-items" class="cart-list"></div>
+        <div class="cart-summary">
+          <div class="total">Total: <strong id="cart-total">$0</strong></div>
+          <button class="btn primary" id="checkout-btn">Checkout (Demo)</button>
+          <button class="btn secondary" id="clear-cart">Clear Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Tune Street — Demo site built with pure HTML, CSS &amp; JavaScript. Open <code>index.html</code> in VS Code / browser.</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
